@@ -440,6 +440,12 @@ export default function PharmaManufacturing3D() {
     setProgress(Math.max(0, Math.min(5, stageIdx)) / 6 + 0.01);
   };
 
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Formatted timestamp
   const currentSeconds = (safeProgress * 16).toFixed(1);
 
@@ -474,22 +480,29 @@ export default function PharmaManufacturing3D() {
 
       {/* 3D Canvas Viewport */}
       <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full min-h-[380px] bg-radial from-[#1e293b]/30 via-transparent to-transparent">
-        <Canvas
-          shadows
-          dpr={[1, 2]}
-          camera={{ position: [0, 2.2, 5.2], fov: 42 }}
-          gl={{ antialias: true, alpha: true }}
-        >
-          <ambientLight intensity={0.7} />
-          <directionalLight position={[4, 7, 4]} intensity={2.2} castShadow color="#ffffff" shadow-mapSize={[1024, 1024]} />
-          <pointLight position={[-4, 3, 2]} intensity={1.4} color="#38bdf8" />
-          <pointLight position={[3, -1, 3]} intensity={1.0} color="#f59e0b" />
-          <Environment preset="city" environmentIntensity={0.65} />
+        {mounted ? (
+          <Canvas
+            shadows
+            dpr={[1, 2]}
+            camera={{ position: [0, 2.2, 5.2], fov: 42 }}
+            gl={{ antialias: true, alpha: true }}
+          >
+            <ambientLight intensity={0.7} />
+            <directionalLight position={[4, 7, 4]} intensity={2.2} castShadow color="#ffffff" shadow-mapSize={[1024, 1024]} />
+            <pointLight position={[-4, 3, 2]} intensity={1.4} color="#38bdf8" />
+            <pointLight position={[3, -1, 3]} intensity={1.0} color="#f59e0b" />
+            <Environment preset="city" environmentIntensity={0.65} />
 
-          <Suspense fallback={null}>
-            <ProductionScene progress={safeProgress} stage={currentStageIndex} />
-          </Suspense>
-        </Canvas>
+            <Suspense fallback={null}>
+              <ProductionScene progress={safeProgress} stage={currentStageIndex} />
+            </Suspense>
+          </Canvas>
+        ) : (
+          <div className="flex h-full w-full items-center justify-center text-sm text-white/40">
+            <span className="mr-2 h-5 w-5 animate-spin rounded-full border-2 border-cyan border-t-transparent" />
+            Initializing 3D Line...
+          </div>
+        )}
 
         {/* Floating Active Stage Badge on Canvas */}
         <div className="pointer-events-none absolute bottom-4 left-4 z-10 flex flex-col gap-1 rounded-2xl border border-white/15 bg-black/75 p-3.5 backdrop-blur-xl shadow-xl max-w-[280px]">

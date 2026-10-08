@@ -3,11 +3,11 @@ import { c as require_jsx_runtime, l as require_react } from "../_libs/@react-th
 import { _ as Link, f as createRouter, g as createRootRouteWithContext, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent, v as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-import { n as __exportAll } from "./server-DBjxXa72.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DPjUR6La.js
+import { n as __exportAll } from "./server-BaaQSAQr.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-Dz3Cl7Se.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-DW_V6dy7.css";
+var styles_default = "/assets/styles-DMqJJbiG.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -190,7 +190,7 @@ function RootComponent() {
 }
 var PHONE = "+916354535789";
 var EMAIL = "press.printit@gmail.com";
-var $$splitComponentImporter = () => import("./routes-imatflXx.mjs").then((n) => n.t);
+var $$splitComponentImporter = () => import("./routes-rp_i15-f.mjs").then((n) => n.t);
 var Route$1 = createFileRoute("/")({
 	head: () => ({
 		meta: [

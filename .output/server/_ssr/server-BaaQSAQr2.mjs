@@ -4,7 +4,7 @@ import { c as require_jsx_runtime, l as require_react } from "../_libs/@react-th
 import { C as getScriptPreloadAttrs, D as _getRenderedMatches, E as resolveManifestCssLink, F as rootRouteId, I as isNotFound, N as isRedirect, O as executeRewriteInput, P as isResolvedRedirect, T as resolveManifestAssetLink, a as isSsrResponse, c as stripSsrResponseBody, d as RouterProvider, i as disposeSsrResponseDetached, k as invariant, n as bindSsrResponseToRequest, o as normalizeSsrResponse, r as defineHandlerCallback, s as replaceSsrResponse, t as renderRouterToStream, w as getStylesheetHref } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as getOrigin, c as createSerializationAdapter, d as toCrossJSONAsync, f as toCrossJSONStream, i as getNormalizedURL, l as makeSerovalPlugin, n as mergeHeaders, o as defaultSerovalPlugins, r as attachRouterServerSsrUtils, s as createRawStreamRPCPlugin, t as waitForRequest, u as fromJSON } from "../_libs/@tanstack/router-core+[...].mjs";
 import { n as createMemoryHistory } from "../_libs/tanstack__history.mjs";
-import { n as __exportAll } from "./server-DBjxXa72.mjs";
+import { n as __exportAll } from "./server-BaaQSAQr.mjs";
 import processModule from "node:process";
 import { AsyncLocalStorage } from "node:async_hooks";
 require_react();
@@ -82,7 +82,7 @@ var HEADERS = { TSS_SHELL: "X-TSS_SHELL" };
 * the dev styles URL for route-scoped CSS collection.
 */
 async function getStartManifest(matchedRoutes) {
-	const { tsrStartManifest } = await import("../_tanstack-start-manifest_v-BryZgsjp.mjs");
+	const { tsrStartManifest } = await import("../_tanstack-start-manifest_v-Cdi36_BH.mjs");
 	const startManifest = tsrStartManifest();
 	let routes = startManifest.routes;
 	routes[rootRouteId];
@@ -1189,8 +1189,8 @@ var getBaseManifest = getProdBaseManifest;
 var createEarlyHintsForRequest = createEarlyHintsCollector;
 async function loadEntries() {
 	const [routerEntry, startEntry, pluginAdapters] = await Promise.all([
-		import("./router-DPjUR6La.mjs").then((n) => n.t),
-		import("./start-C_dTwwuU.mjs"),
+		import("./router-Dz3Cl7Se.mjs").then((n) => n.t),
+		import("./start-CC6o5ggS.mjs"),
 		import("./empty-plugin-adapters-D9UWiqvJ.mjs")
 	]);
 	return {

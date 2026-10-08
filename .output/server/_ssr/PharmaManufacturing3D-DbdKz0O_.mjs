@@ -2,7 +2,7 @@ import { i as __toESM } from "../_runtime.mjs";
 import { L as init_performance, R as performance_default, j as TextureLoader, v as MathUtils, x as MeshStandardMaterial } from "../_libs/@monogrid/gainmap-js+[...].mjs";
 import { a as useFrame, c as require_jsx_runtime, i as Canvas, l as require_react, n as ContactShadows, o as useLoader, r as Environment, t as Sparkles } from "../_libs/@react-three/drei+[...].mjs";
 import { S as Layers, a as Sparkles$1, c as Scissors, d as Printer, f as Play, g as Package, j as Boxes, m as Pause, o as ShieldCheck, u as RotateCcw } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/PharmaManufacturing3D-BJRGwiNm.js
+//#region node_modules/.nitro/vite/services/ssr/assets/PharmaManufacturing3D-DbdKz0O_.js
 init_performance();
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
@@ -593,6 +593,10 @@ function PharmaManufacturing3D() {
 	const jumpToStage = (stageIdx) => {
 		setProgress(Math.max(0, Math.min(5, stageIdx)) / 6 + .01);
 	};
+	const [mounted, setMounted] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
+		setMounted(true);
+	}, []);
 	const currentSeconds = (safeProgress * 16).toFixed(1);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "relative flex flex-col rounded-3xl border border-white/15 bg-gradient-to-b from-[#111420] via-[#0c0e16] to-[#090b11] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden",
@@ -631,7 +635,7 @@ function PharmaManufacturing3D() {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "relative aspect-[4/3] sm:aspect-[16/10] w-full min-h-[380px] bg-radial from-[#1e293b]/30 via-transparent to-transparent",
 				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Canvas, {
+					mounted ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Canvas, {
 						shadows: true,
 						dpr: [1, 2],
 						camera: {
@@ -689,6 +693,9 @@ function PharmaManufacturing3D() {
 								})
 							})
 						]
+					}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex h-full w-full items-center justify-center text-sm text-white/40",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "mr-2 h-5 w-5 animate-spin rounded-full border-2 border-cyan border-t-transparent" }), "Initializing 3D Line..."]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "pointer-events-none absolute bottom-4 left-4 z-10 flex flex-col gap-1 rounded-2xl border border-white/15 bg-black/75 p-3.5 backdrop-blur-xl shadow-xl max-w-[280px]",

@@ -36,11 +36,11 @@ import { PriceCalculator } from "@/components/PriceCalculator";
 import logo from "@/assets/logo-white.png";
 
 import CmykScrollProgress from "@/components/CmykScrollProgress";
-import FinishesShowcase from "@/components/FinishesShowcase";
 import SampleKitBanner from "@/components/SampleKitBanner";
 import TiltCard from "@/components/TiltCard";
 
 import HeroShowcase from "@/components/HeroShowcase";
+const FinishesShowcase = lazy(() => import("@/components/FinishesShowcase"));
 const PharmaManufacturing3D = lazy(() => import("@/components/PharmaManufacturing3D"));
 
 const PHONE = "+916354535789";
@@ -118,7 +118,9 @@ function Home() {
       <Hero />
       <TrustStrip />
       <Services />
-      <FinishesShowcase />
+      <Suspense fallback={<div className="h-96 w-full bg-[#090b11]" />}>
+        <FinishesShowcase />
+      </Suspense>
       <ProductsGrid />
       <PharmaSection />
       <SampleKitBanner />
