@@ -46,6 +46,7 @@ const PharmaManufacturing3D = lazy(() => import("@/components/PharmaManufacturin
 const PHONE = "+916354535789";
 const EMAIL = "press.printit@gmail.com";
 const WHATSAPP = `https://wa.me/${PHONE}`;
+const INSTAGRAM = "https://www.instagram.com/press.printit_indore";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -816,6 +817,9 @@ function Contact() {
               <a href={`mailto:${EMAIL}`} className="contact-line">
                 <Mail className="h-5 w-5 text-cyan" /> {EMAIL}
               </a>
+              <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="contact-line">
+                <Instagram className="h-5 w-5 text-cyan" /> @press.printit_indore
+              </a>
               <div className="contact-line">
                 <MapPin className="h-5 w-5 text-cyan shrink-0" /> Rambali Nagar Industrial Area, Indore, Madhya Pradesh
               </div>
@@ -887,7 +891,7 @@ function Footer() {
             <a href={`mailto:${EMAIL}`} aria-label="Email" className="social-btn border-white/15 text-white/70 hover:text-white hover:border-cyan">
               <Mail className="h-4 w-4" />
             </a>
-            <a href="#" aria-label="Instagram" className="social-btn border-white/15 text-white/70 hover:text-white hover:border-cyan">
+            <a href={INSTAGRAM} target="_blank" rel="noreferrer" aria-label="Instagram" className="social-btn border-white/15 text-white/70 hover:text-white hover:border-cyan">
               <Instagram className="h-4 w-4" />
             </a>
           </div>
